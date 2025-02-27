@@ -11,4 +11,11 @@ jobs:
      runs-on: ubuntu-latest
      steps:
         - uses: actions/checkout@v2
-
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '14' # O la versión que necesites
+        - name: Install dependencies
+          run: npm install --no-audit --no-fund --no-package-lock
+        - name: Build
+          run: npm run build
