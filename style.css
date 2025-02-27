@@ -1,0 +1,149 @@
+body{
+    background: url(imagenes/fondo.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.logo{
+   display: block;
+   width: 200px; 
+   margin: 0 auto;
+   filter: drop-shadow(0 2px 5px #fff);
+}
+
+body.light-mode{
+    --colorPulse1 : rgba(0, 0, 0, 0.85);
+    --colorPulse2 : rgba(0, 0, 0, 0);
+    --colorCard: rgba(255, 255, 255, 0.2);
+    --colorTextoCard: #000;
+    --sombraTexto: 2px 2px 5px rgb(17, 215, 250);
+    --colorPanel:  rgba(255, 255, 255, 0.4);
+    --sombraPanel: rgba(0, 0, 0, 1);
+    --hoverCard: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode{
+    background-image: url(imagenes/fondo-oscuro.jpg);
+    --colorPulse1 : rgba(255, 255, 255, 0.85);
+    --colorPulse2 : rgba(255, 255, 255, 0);
+    --colorCard: rgba(255, 255, 255, 0.2);
+    --colorTextoCard: #fff;
+    --sombraTexto: 2px 2px 5px #000;
+    --colorPanel:rgba(0, 0, 0, 0.4);
+    --sombraPanel: rgba(255, 255, 255, 0.5);
+    --hoverCard:  rgba(255, 255, 255, 0.1);
+}
+
+.card{
+    margin: 8px auto;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 0 20px #000;
+    border-radius: 20px;
+    padding: 20px 0;
+    background-color: var(--colorCard);
+}
+
+.card img{
+    width: 250px;
+    margin: 8px auto;
+    transition: 0.2s ease;
+    filter: drop-shadow(0 2px 5px #fff);
+}
+
+.card:hover img{
+    transform: rotate(20deg);
+    transition: 0.2s ease;
+}
+
+.card label{
+    display: block;
+    height: 20px;
+    font-weight: bold;
+    color: var(--colorTextoCard);
+    text-shadow: var(--sombraTexto);
+    font-size: 20px;
+}
+
+.container-pokebola{
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+}
+
+.container-pokebola .panel{
+    position: absolute;
+    background-color: var(--colorPanel);
+    transition: .3s all;
+    box-shadow: 1px 1px 5px var(--sombraPanel);
+    width: 90px;
+    height: 180px;
+    border-radius: 15px;
+    transform: translateY(-100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    display: none;
+}
+
+.container-pokebola .panel.active{
+    display: flex;
+}
+
+.container-pokebola .panel .oscuro{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background-color: black;
+    transition: .3 all;
+}
+
+.container-pokebola .panel .claro{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #fff;
+    background-color: yellow;
+    transition: .3 all;
+}
+
+
+.container-pokebola .pokebola{
+    cursor: pointer;
+    border-radius: 50%;
+    width: 70px;
+    filter: sepia(50%);
+    transition: .4s ease;
+    animation: pulse 1.5s infinite;
+}
+
+.container-pokebola .pokebola:hover{
+    filter: sepia(0);
+    transition: .4s ease;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0 0 0 0 var(--colorPulse1);
+    }
+    50%{
+        box-shadow: 0 0 0 25px var(--colorPulse2);
+    }
+    100%{
+        box-shadow: 0 0 0 0 var(--colorPulse2);
+    }
+}
+
+@media (min-width: 1000px){
+    .container-card{
+        display: flex;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
