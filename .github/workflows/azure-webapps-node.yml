@@ -16,7 +16,8 @@ jobs:
           with:
             node-version: '14' # O la versión que necesites
         - name: Install dependencies
-          run: npm install --no-lockfile --prefer-offline
+          run: npm install
         - name: Build
           run: npm run build
+
 
