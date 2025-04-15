@@ -1,0 +1,26 @@
+name: Run Tests & Static Analysis
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Establece Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Instalar dependencias
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # Ejecutar análisis estático con ESLint
+      - name: Run Static Code Analysis (ESLint)
+        run: |
+          npx eslint ./js
