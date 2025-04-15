@@ -1,0 +1,40 @@
+name: Run Tests & Static Analysis
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    services:
+      docker:
+        image: docker:20.10.7
+        options: --privileged
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Configura Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Instalar dependencias (como ESLint)
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # Construir el contenedor de Docker (si tienes Dockerfile)
+      - name: Build Docker Image
+        run: docker build -t my-app .
+
+      # Ejecutar análisis de código estático con ESLint
+      - name: Run Static Code Analysis (ESLint)
+        run: docker run my-app npx eslint ./js
+
+      # (Opcional) Validar HTML con un validador CLI
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v0.5.0
+        with:
+          root: ./
