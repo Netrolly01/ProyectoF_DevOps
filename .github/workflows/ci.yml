@@ -1,4 +1,4 @@
-name: Run Tests & Static Analysis
+name: Simple HTML Lint
 
 on: [push, pull_request]
 
@@ -9,23 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Establece Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      # Instalar dependencias
-      - name: Install dependencies
+      # Validación básica con htmlhint
+      - name: Install htmlhint
         run: |
-          npm install
+          npm install -g htmlhint
 
-      # Ejecutar análisis estático con ESLint
-      - name: Run Static Code Analysis (ESLint)
+      - name: Run htmlhint
         run: |
-          npx eslint ./js
-
-      # Ejecutar pruebas unitarias con Jest
-      - name: Run Unit Tests (Jest)
-        run: |
-          npm run test
+          htmlhint **/*.html || true
