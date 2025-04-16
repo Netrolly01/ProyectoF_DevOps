@@ -1,5 +1,4 @@
 ```markdown
-
 # 🚀 CI/CD Pipeline para Aplicación de Pokémon
 
 Este proyecto implementa una página web de Pokémon con la capacidad de alternar entre los modos claro y oscuro. Además, cuenta con un pipeline de integración continua (CI) y despliegue continuo (CD) utilizando **GitHub Actions** y **GitHub Pages**.
@@ -118,12 +117,20 @@ npm start
 
 ---
 
+## 🚀 Despliegue Automático
+
+Cada push a `main` desencadena el pipeline CI/CD y publica la app en GitHub Pages:
+
+🔗 **GitHub Page del proyecto:**  
+[https://netrolly01.github.io/ProyectoF_DevOps/](https://netrolly01.github.io/ProyectoF_DevOps/)
+
+---
+
 ## 🧰 Tecnologías Utilizadas
 
 - HTML, CSS, JavaScript
 - GitHub Actions (CI/CD)
 - GitHub Pages (Hosting)
-- Docker + NGINX (si aplica, versión alternativa)
 - Console logs para monitoreo básico
 
 ---
@@ -169,8 +176,8 @@ Si deseas contribuir, sigue estos pasos:
 
 ---
 
-## 👨‍💻 Estudiantes
+## 👨‍💻 Autores
 
-- Netanel de Jesus  
-- Jonathan Jose Firas Martinez 
+- Netanel de Jesus 
+- Jonathan Jose Frias Martinez
 ```
