@@ -1,4 +1,5 @@
 ```markdown
+
 # 🚀 CI/CD Pipeline para Aplicación de Pokémon
 
 Este proyecto implementa una página web de Pokémon con la capacidad de alternar entre los modos claro y oscuro. Además, cuenta con un pipeline de integración continua (CI) y despliegue continuo (CD) utilizando **GitHub Actions** y **GitHub Pages**.
@@ -114,15 +115,6 @@ npm install
 ```bash
 npm start
 ```
-
----
-
-## 🚀 Despliegue Automático
-
-Cada push a `main` desencadena el pipeline CI/CD y publica la app en GitHub Pages:
-
-🔗 **GitHub Page del proyecto:**  
-[https://netrolly01.github.io/Prueba/](https://netrolly01.github.io/Prueba/)
 
 ---
 
