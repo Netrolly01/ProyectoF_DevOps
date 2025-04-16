@@ -182,5 +182,3 @@ Si deseas contribuir, sigue estos pasos:
 - Netanel de Jesus  
 - Jonathan Jose Firas Martinez 
 ```
-
----
